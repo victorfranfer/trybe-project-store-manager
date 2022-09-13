@@ -4,6 +4,6 @@ const salesMiddleware = require('../middlewares/salesMiddleware');
 
 const sales = express.Router();
 
-sales.post('/', salesMiddleware.validateSale, salesController.addSales);
+sales.post('/', salesMiddleware.validateSale, salesController.addSale);
 
 module.exports = sales;
