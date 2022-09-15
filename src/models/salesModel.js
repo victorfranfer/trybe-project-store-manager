@@ -11,9 +11,8 @@ const addSale = async ({ saleId, productId, quantity }) => {
 
 const addSaleDate = async () => {
   const date = new Date();
-  const [saleDate] = await connection.execute(
-    'INSERT INTO StoreManager.sales (date) VALUE (?)', [date],
-  );
+  const [saleDate] = await connection
+    .execute('INSERT INTO StoreManager.sales (date) VALUE (?)', [date]);
 
   return saleDate.insertId;
 };
