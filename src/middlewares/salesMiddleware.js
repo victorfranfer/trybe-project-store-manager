@@ -6,9 +6,7 @@ const validateSale = async (req, res, next) => {
   const quantField = sales.every((sale) => sale.quantity !== undefined && sale.quantity !== null);
   const quantValue = sales.every((sale) => sale.quantity > 0);
 
-  if (!productIdField) {
-    return res.status(400).json({ message: '"productId" is required' });
-  }
+  if (!productIdField) return res.status(400).json({ message: '"productId" is required' });
   if (!quantField) {
     return res.status(400).json({ message: '"quantity" is required' });
   }
